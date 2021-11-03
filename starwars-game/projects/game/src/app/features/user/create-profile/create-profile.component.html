@@ -1,0 +1,15 @@
+<form [formGroup]="profileForm">
+  <div class="row">
+    <div class="col">
+      <label for="">Prenom</label>
+      <input type="number" name="surname" class="field" formControlName="surname"> <!-- [(ngModel)]="user.surname" required> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <!-- par défaut le premier bouton est en submit-->
+      <button (click)="save()">Créer</button>
+    </div>
+  </div>
+</form>
