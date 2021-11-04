@@ -12,6 +12,8 @@ import { BoolToColorDirective } from './shared/directives/bool-to-color.directiv
 import { UserModule } from './features/user/user.module';
 import { ChildOneComponent } from './shared/components/child-one/child-one.component';
 import { TestOneComponent } from './shared/components/test-one/test-one.component';
+import { LoggerService } from './shared/services/logger.service';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,11 @@ import { TestOneComponent } from './shared/components/test-one/test-one.componen
     GameModule,
     UserModule
   ],
-  providers: [],
+  providers: [
+    // LoggerService,
+    // En prod ne retourne rien, sinon retourne le LoggerService
+    { provide: LoggerService, useFactory: () => { return environment.production ? null : new LoggerService() }}
+  ],
   bootstrap: [AppComponent, HeaderComponent, SideBarComponent]
 })
 export class AppModule { }

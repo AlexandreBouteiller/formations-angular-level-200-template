@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { logger } from 'projects/game/src/environments/logger-one';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserBis } from '../../../core/models/user';
@@ -20,6 +21,7 @@ export class ProfileService {
 
   constructor(private httpClient: HttpClient) {
     this.displayKey = Math.random()
+    logger.log("Constructeur de ProfileService !!")
   }
 
   getAll(): Observable<UserBis[]> {
