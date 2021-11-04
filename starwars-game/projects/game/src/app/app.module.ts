@@ -10,12 +10,16 @@ import { SideBarComponent } from './shared/components/side-bar/side-bar.componen
 import { BoolToTextPipe } from './shared/pipes/bool-to-text.pipe';
 import { BoolToColorDirective } from './shared/directives/bool-to-color.directive';
 import { UserModule } from './features/user/user.module';
+import { ChildOneComponent } from './shared/components/child-one/child-one.component';
+import { TestOneComponent } from './shared/components/test-one/test-one.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SideBarComponent
+    SideBarComponent,
+    ChildOneComponent,
+    TestOneComponent
   ],
   imports: [
     BrowserModule,

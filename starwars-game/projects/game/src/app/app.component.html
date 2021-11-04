@@ -2,3 +2,12 @@
 <h1>Star wars game</h1>
 
 <router-outlet></router-outlet>
+
+<h2>2 Test One, profile service vient du composant parent test one, instance unique par composant</h2>
+<game-test-one></game-test-one>
+<game-test-one></game-test-one>
+
+<h2>3 Game child, profile service en singleton, vient de lancement au démarrage (provided in root)</h2>
+<game-child-one></game-child-one>
+<game-child-one></game-child-one>
+<game-child-one></game-child-one>

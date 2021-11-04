@@ -16,8 +16,11 @@ export declare type ApiResult = {
   providedIn: 'root'
 })
 export class ProfileService {
+  displayKey !:number
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.displayKey = Math.random()
+  }
 
   getAll(): Observable<UserBis[]> {
     return this.httpClient.get<ApiResult>('https://swapi.dev/api/people')
