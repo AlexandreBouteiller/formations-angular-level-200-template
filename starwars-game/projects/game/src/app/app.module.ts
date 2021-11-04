@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,15 @@ import { ChildOneComponent } from './shared/components/child-one/child-one.compo
 import { TestOneComponent } from './shared/components/test-one/test-one.component';
 import { LoggerService } from './shared/services/logger.service';
 import { environment } from '../environments/environment';
+
+
+// S'exécute au démarrage de l'appli, avant qu'elle soit dispo pour l'utilisateur
+const initializeApp = () => {
+  return new Promise((resolve, reject) => {
+    // fetch()
+    resolve('v1.1')
+  })
+}
 
 @NgModule({
   declarations: [
@@ -33,7 +42,12 @@ import { environment } from '../environments/environment';
   providers: [
     // LoggerService,
     // En prod ne retourne rien, sinon retourne le LoggerService
-    { provide: LoggerService, useFactory: () => { return environment.production ? null : new LoggerService() }}
+    { provide: LoggerService, useFactory: () => { return environment.production ? null : new LoggerService() }},
+    {
+      provide: APP_INITIALIZER,
+      useFactory: () => initializeApp,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent, HeaderComponent, SideBarComponent]
 })
