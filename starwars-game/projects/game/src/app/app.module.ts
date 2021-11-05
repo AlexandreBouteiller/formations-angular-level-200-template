@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,6 +18,8 @@ import { RxjsDiscoverComponent } from './shared/rxjs-discover/rxjs-discover.comp
 import { RxjsPipeAsyncComponent } from './shared/rxjs-pipe-async/rxjs-pipe-async.component';
 import { ConcatMergeMapComponent } from './shared/concat-merge-map/concat-merge-map.component';
 import { CountClickComponent } from './shared/count-click/count-click.component';
+import { AppTranslateModule } from './app-translate-module';
+import { TranslatesComponent } from './shared/translates/translates.component';
 
 
 // S'exécute au démarrage de l'appli, avant qu'elle soit dispo pour l'utilisateur
@@ -38,14 +40,16 @@ const initializeApp = () => {
     RxjsDiscoverComponent,
     RxjsPipeAsyncComponent,
     ConcatMergeMapComponent,
-    CountClickComponent
+    CountClickComponent,
+    TranslatesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     GameModule,
-    UserModule
+    UserModule,
+    AppTranslateModule
   ],
   providers: [
     // LoggerService,

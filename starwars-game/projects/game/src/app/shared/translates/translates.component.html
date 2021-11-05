@@ -1,0 +1,11 @@
+<p>translates works!</p>
+<form>
+  <!-- <input value="'en'" type="checkbox" checked="language === 'en'"> -->
+  <!-- <li *ngFor="let item of language">
+    <input type="checkbox" (change)="changeLanguage(item)"/> {{ item }}
+  </li> -->
+  <select #lang (change)="changeLanguage(lang.value)">
+    <option *ngFor="let item of language">{{ item }}</option>
+  </select>
+</form>
+
