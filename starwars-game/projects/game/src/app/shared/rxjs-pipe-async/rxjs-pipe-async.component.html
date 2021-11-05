@@ -1,0 +1,8 @@
+<p>Utilisation pipe of</p>
+<ul>
+  <!-- fait un subscribe et unsubscribe automatiquement -->
+  <!-- en revanche on n'a plus la main dessus pas de pipe ni quoi que ce soit de dans, à faire en service si besoin -->
+  <li *ngFor="let item of statResultOf$ | async">
+    {{ item }}
+  </li>
+</ul>

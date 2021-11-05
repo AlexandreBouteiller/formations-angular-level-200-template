@@ -25,8 +25,11 @@ export class ProfileService {
   }
 
   getAll(): Observable<UserBis[]> {
+    // Le complete fait un next() puis un complete()
     return this.httpClient.get<ApiResult>('https://swapi.dev/api/people')
                   .pipe(map(item => {
+                    // Le map créé un nouveau next()
+                    // il faut bien unsubscribe à la fin
                     let array: UserBis[] = []
                     array = item.results.map(data => {
                       return {

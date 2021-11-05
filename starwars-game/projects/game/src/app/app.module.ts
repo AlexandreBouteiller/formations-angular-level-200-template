@@ -14,6 +14,10 @@ import { ChildOneComponent } from './shared/components/child-one/child-one.compo
 import { TestOneComponent } from './shared/components/test-one/test-one.component';
 import { LoggerService } from './shared/services/logger.service';
 import { environment } from '../environments/environment';
+import { RxjsDiscoverComponent } from './shared/rxjs-discover/rxjs-discover.component';
+import { RxjsPipeAsyncComponent } from './shared/rxjs-pipe-async/rxjs-pipe-async.component';
+import { ConcatMergeMapComponent } from './shared/concat-merge-map/concat-merge-map.component';
+import { CountClickComponent } from './shared/count-click/count-click.component';
 
 
 // S'exécute au démarrage de l'appli, avant qu'elle soit dispo pour l'utilisateur
@@ -30,7 +34,11 @@ const initializeApp = () => {
     HeaderComponent,
     SideBarComponent,
     ChildOneComponent,
-    TestOneComponent
+    TestOneComponent,
+    RxjsDiscoverComponent,
+    RxjsPipeAsyncComponent,
+    ConcatMergeMapComponent,
+    CountClickComponent
   ],
   imports: [
     BrowserModule,
