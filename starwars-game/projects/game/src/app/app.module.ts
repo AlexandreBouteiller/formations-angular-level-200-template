@@ -47,7 +47,7 @@ const initializeApp = () => {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GameModule,
+    // GameModule,
     UserModule,
     AppTranslateModule
   ],
